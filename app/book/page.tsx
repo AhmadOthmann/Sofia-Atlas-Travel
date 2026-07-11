@@ -22,7 +22,7 @@ export default function BookConsultationPage() {
   return (
     <main className="min-h-screen bg-background px-6 py-16 text-foreground">
       <div className="mx-auto max-w-xl rounded-2xl border border-border bg-card p-8 shadow-2xl">
-        <Image src="/brand/atlas-logo-monogram.webp" alt="Atlas Travel" width={56} height={56} className="mb-5 h-14 w-14 rounded-xl object-cover" />
+        <Image src="/brand/atlas-logo-compass.webp" alt="Atlas Travel" width={56} height={56} className="mb-5 h-14 w-14 rounded-xl object-cover" />
         <p className="text-sm font-medium uppercase tracking-[0.25em] text-primary">Atlas Travel</p>
         <h1 className="mt-3 text-3xl font-semibold">Book your consultation</h1>
         <p className="mt-3 text-muted-foreground">Choose a demo appointment with Maria. Sofia will add the confirmed outcome to Mission Control.</p>

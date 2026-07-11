@@ -1,5 +1,7 @@
 # Sofia Atlas Travel
 
+[![CI](https://github.com/AhmadOthmann/Sofia-Atlas-Travel/actions/workflows/ci.yml/badge.svg)](https://github.com/AhmadOthmann/Sofia-Atlas-Travel/actions/workflows/ci.yml)
+
 Sofia Atlas Travel is a self-contained demo product built for the HappyRobot challenge at the TUM.ai Makeathon. It combines a published voice qualification workflow with an operator dashboard, Mission Control ingestion, callback capture, and consultation booking.
 
 ## Current status
@@ -107,11 +109,17 @@ Local demo events are stored in `.data/sofia-atlas-demo.json`. On Vercel, the de
 
 ## Brand assets
 
-The repository includes three generated Atlas Travel visuals under `public/brand`:
+The compass and conversation emblem is the primary Atlas Travel identity. The repository includes three generated visuals under `public/brand`:
 
-- `atlas-logo-monogram.webp` for the product interface and compact placements
-- `atlas-logo-compass.webp` as an alternate travel and conversation emblem
-- `atlas-project-cover.webp` for portfolio cards and project documentation\n\n| Monogram | Compass and conversation |\n| --- | --- |\n| ![Atlas Travel monogram](public/brand/atlas-logo-monogram.webp) | ![Atlas Travel compass and conversation emblem](public/brand/atlas-logo-compass.webp) |\n\n![Sofia Atlas Travel project cover](public/brand/atlas-project-cover.webp)
+- `atlas-logo-compass.webp` as the primary product logo
+- `atlas-logo-monogram.webp` as an alternate compact mark
+- `atlas-project-cover.webp` for portfolio cards and project documentation
+
+| Primary compass logo | Alternate monogram |
+| --- | --- |
+| ![Atlas Travel compass and conversation emblem](public/brand/atlas-logo-compass.webp) | ![Atlas Travel monogram](public/brand/atlas-logo-monogram.webp) |
+
+![Sofia Atlas Travel project cover](public/brand/atlas-project-cover.webp)
 
 ## License
 
