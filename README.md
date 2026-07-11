@@ -1,4 +1,4 @@
-# Atlas AI Sales Copilot
+# Sofia Atlas Travel
 
 Sofia Atlas Travel is a self-contained demo product built for the HappyRobot challenge at the TUM.ai Makeathon. It combines a published voice qualification workflow with an operator dashboard, Mission Control ingestion, callback capture, and consultation booking.
 
