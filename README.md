@@ -111,7 +111,7 @@ The repository includes three generated Atlas Travel visuals under `public/brand
 
 - `atlas-logo-monogram.webp` for the product interface and compact placements
 - `atlas-logo-compass.webp` as an alternate travel and conversation emblem
-- `atlas-project-cover.webp` for portfolio cards and project documentation
+- `atlas-project-cover.webp` for portfolio cards and project documentation\n\n| Monogram | Compass and conversation |\n| --- | --- |\n| ![Atlas Travel monogram](public/brand/atlas-logo-monogram.webp) | ![Atlas Travel compass and conversation emblem](public/brand/atlas-logo-compass.webp) |\n\n![Sofia Atlas Travel project cover](public/brand/atlas-project-cover.webp)
 
 ## License
 
