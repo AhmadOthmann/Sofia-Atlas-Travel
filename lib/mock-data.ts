@@ -1,0 +1,263 @@
+import type {
+  Lead,
+  AIAgent,
+  Itinerary,
+  TranscriptMessage,
+  WhisperPrompt,
+  ClientProfile,
+  GlobalKPIs,
+} from './types';
+
+export const mockLeads: Lead[] = [
+  {
+    id: '1',
+    name: 'John D.',
+    status: 'in-call',
+    aiProgress: 85,
+    sentiment: 'positive',
+    budget: '€75,000+',
+    preferences: ['Private Jets', 'Aman Resorts', 'Wine Tours'],
+    destination: 'Tuscany, Italy',
+    callDuration: '4:32',
+    assignedAgent: 'Copilot Alpha',
+  },
+  {
+    id: '2',
+    name: 'Sarah M.',
+    status: 'ready-for-handoff',
+    aiProgress: 100,
+    sentiment: 'positive',
+    budget: '€120,000+',
+    preferences: ['Ryokan Stays', 'Private Guides', 'Michelin Dining'],
+    destination: 'Japan',
+    callDuration: '8:15',
+    assignedAgent: 'Itinerary Bot',
+  },
+  {
+    id: '3',
+    name: 'Robert K.',
+    status: 'qualifying',
+    aiProgress: 45,
+    sentiment: 'neutral',
+    budget: '€50,000+',
+    preferences: ['Safari', 'Luxury Lodges'],
+    destination: 'South Africa',
+    callDuration: '2:10',
+    assignedAgent: 'Copilot Alpha',
+  },
+  {
+    id: '4',
+    name: 'Elena V.',
+    status: 'in-call',
+    aiProgress: 70,
+    sentiment: 'positive',
+    budget: '€200,000+',
+    preferences: ['Yacht Charter', 'Island Hopping', 'Spa Retreats'],
+    destination: 'Maldives',
+    callDuration: '5:48',
+    assignedAgent: 'Luxury Concierge',
+  },
+  {
+    id: '5',
+    name: 'Marcus T.',
+    status: 'qualifying',
+    aiProgress: 30,
+    sentiment: 'negative',
+    budget: '€40,000+',
+    preferences: ['Adventure', 'Hiking', 'Wildlife'],
+    destination: 'Patagonia',
+    callDuration: '1:45',
+    assignedAgent: 'Copilot Alpha',
+  },
+];
+
+export const mockAIAgents: AIAgent[] = [
+  {
+    id: 'agent-1',
+    name: 'Inbound Agent',
+    status: 'in-call',
+    currentLead: 'John D.',
+    callsHandled: 47,
+  },
+  {
+    id: 'agent-2',
+    name: 'Outbound Agent',
+    status: 'idle',
+    callsHandled: 32,
+  },
+  {
+    id: 'agent-3',
+    name: 'DM Agent',
+    status: 'in-call',
+    currentLead: 'Elena V.',
+    callsHandled: 28,
+  },
+];
+
+export const mockItineraries: Itinerary[] = [
+  {
+    id: 'itin-1',
+    leadName: 'Sarah M.',
+    destination: 'Japan - Tokyo, Kyoto, Hakone',
+    duration: '14 Days',
+    status: 'pending-review',
+    highlights: ['Aman Tokyo', 'Private Tea Ceremony', 'Kaiseki Experience'],
+    estimatedValue: '€145,000',
+    createdAt: '2 hours ago',
+  },
+  {
+    id: 'itin-2',
+    leadName: 'David L.',
+    destination: 'Switzerland - Zermatt, St. Moritz',
+    duration: '10 Days',
+    status: 'pending-review',
+    highlights: ['The Chedi Andermatt', 'Private Ski Guide', 'Glacier Express'],
+    estimatedValue: '€95,000',
+    createdAt: '4 hours ago',
+  },
+  {
+    id: 'itin-3',
+    leadName: 'Amanda C.',
+    destination: 'French Polynesia - Bora Bora, Tahiti',
+    duration: '12 Days',
+    status: 'revision-needed',
+    highlights: ['Four Seasons Overwater Villa', 'Private Island Picnic'],
+    estimatedValue: '€180,000',
+    createdAt: '1 day ago',
+  },
+];
+
+export const mockTranscript: TranscriptMessage[] = [
+  {
+    id: 't1',
+    speaker: 'ai',
+    message: 'Hello! I am your Atlas travel assistant. Where would you like to travel and what dates are you considering?',
+    timestamp: '10:24:15',
+    sentiment: 'neutral',
+  },
+  {
+    id: 't2',
+    speaker: 'customer',
+    message: 'I want to plan a 10-day honeymoon in Italy in September with a luxury hotel and private tours.',
+    timestamp: '10:24:32',
+    sentiment: 'positive',
+  },
+  {
+    id: 't3',
+    speaker: 'ai',
+    message: 'Excellent choice. I recommend Rome, Florence, and the Amalfi Coast. What budget range should I target?',
+    timestamp: '10:24:45',
+    sentiment: 'positive',
+  },
+  {
+    id: 't4',
+    speaker: 'customer',
+    message: 'Around 18,000 EUR. We also want one day focused on wine tasting.',
+    timestamp: '10:25:02',
+    sentiment: 'positive',
+  },
+  {
+    id: 't5',
+    speaker: 'ai',
+    message: 'Perfect. I can prepare a tailored itinerary with boutique stays, private transfers, and a Chianti tasting day.',
+    timestamp: '10:25:18',
+    sentiment: 'positive',
+  },
+  {
+    id: 't6',
+    speaker: 'customer',
+    message: 'Sounds great. Can I speak to someone to finalize details and payment options?',
+    timestamp: '10:25:35',
+    sentiment: 'positive',
+  },
+  {
+    id: 't7',
+    speaker: 'ai',
+    message: 'Absolutely. Please call our travel specialist at +498941433933 and mention your Italy honeymoon plan so we can finalize everything quickly.',
+    timestamp: '10:25:50',
+    sentiment: 'positive',
+  },
+];
+
+export const mockWhisperPrompts: WhisperPrompt[] = [
+  {
+    id: 'w1',
+    suggestion: 'Suggest Constantia wine region stop',
+    reason: 'Customer mentioned love for wine - perfect segue to South African wine country',
+    priority: 'high',
+  },
+  {
+    id: 'w2',
+    suggestion: 'Mention private chef experience',
+    reason: 'Anniversary celebration - exclusive dining enhances romance',
+    priority: 'medium',
+  },
+  {
+    id: 'w3',
+    suggestion: 'Offer helicopter transfers',
+    reason: 'High-budget client - time is premium, scenic approach',
+    priority: 'low',
+  },
+];
+
+export const mockClientProfiles: Record<string, ClientProfile> = {
+  '1': {
+    id: '1',
+    name: 'John Davidson',
+    budget: '€75,000+',
+    preferences: ['Private Jets', 'Aman Resorts', 'Wine Tours', 'Fine Dining'],
+    previousTrips: ['Amalfi Coast 2024', 'Maldives 2023', 'Swiss Alps 2022'],
+    vipStatus: 'platinum',
+    notes: 'Prefers early morning flights. Wife has shellfish allergy. Always books butler service.',
+  },
+  '2': {
+    id: '2',
+    name: 'Sarah Mitchell',
+    budget: '€120,000+',
+    preferences: ['Ryokan Stays', 'Private Guides', 'Michelin Dining', 'Cultural Experiences'],
+    previousTrips: ['Morocco 2024', 'Bhutan 2023'],
+    vipStatus: 'gold',
+    notes: 'Passionate about photography. Requires vegetarian options. Speaks fluent Japanese.',
+  },
+  '3': {
+    id: '3',
+    name: 'Robert Klein',
+    budget: '€50,000+',
+    preferences: ['Safari', 'Luxury Lodges', 'Wildlife Photography'],
+    previousTrips: ['Kenya 2023', 'Botswana 2022'],
+    vipStatus: 'silver',
+    notes: 'First time client. Referred by John Davidson. Interested in conservation efforts.',
+  },
+  '4': {
+    id: '4',
+    name: 'Elena Vasquez',
+    budget: '€200,000+',
+    preferences: ['Yacht Charter', 'Island Hopping', 'Spa Retreats', 'Privacy'],
+    previousTrips: ['Caribbean 2024', 'Seychelles 2023', 'Fiji 2022'],
+    vipStatus: 'platinum',
+    notes: 'CEO of tech company. Requires absolute privacy. Personal chef preferred on all trips.',
+  },
+  '5': {
+    id: '5',
+    name: 'Marcus Thompson',
+    budget: '€40,000+',
+    preferences: ['Adventure', 'Hiking', 'Wildlife', 'Sustainable Travel'],
+    previousTrips: ['New Zealand 2023'],
+    vipStatus: 'silver',
+    notes: 'Active lifestyle. Prefers eco-lodges. Needs high-altitude fitness briefing.',
+  },
+};
+
+export const mockGlobalKPIs: GlobalKPIs = {
+  timeToQuote: {
+    value: '2.4h',
+    trend: 'down',
+    change: '-18%',
+  },
+  aiAccuracy: {
+    value: 94.2,
+    trend: 'up',
+  },
+  activeLeads: 12,
+  handoffsToday: 8,
+};
