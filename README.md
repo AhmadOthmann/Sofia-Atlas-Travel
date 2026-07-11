@@ -105,6 +105,14 @@ Local demo events are stored in `.data/sofia-atlas-demo.json`. On Vercel, the de
 - [Demo script](docs/DEMO_SCRIPT.md)
 - [Completion audit](docs/COMPLETION_AUDIT.md)
 
+## Brand assets
+
+The repository includes three generated Atlas Travel visuals under `public/brand`:
+
+- `atlas-logo-monogram.webp` for the product interface and compact placements
+- `atlas-logo-compass.webp` as an alternate travel and conversation emblem
+- `atlas-project-cover.webp` for portfolio cards and project documentation
+
 ## License
 
 No license has been selected. Add one before accepting external contributions or reuse.

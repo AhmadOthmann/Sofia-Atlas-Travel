@@ -1,11 +1,11 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import type { AIAgent, GlobalKPIs } from '@/lib/types';
 import {
-  Compass,
   LayoutDashboard,
   Users,
   FileText,
@@ -37,11 +37,9 @@ export function NavigationSidebar({ agents, kpis }: NavigationSidebarProps) {
     <aside className="relative z-20 flex w-full shrink-0 flex-row items-center border-b border-border bg-sidebar p-4 lg:h-screen lg:w-64 lg:flex-col lg:items-start lg:overflow-y-auto lg:border-b-0 lg:border-r lg:px-4 lg:py-6">
       {/* Logo */}
       <Link href="/" className="flex items-center gap-3 px-2 lg:mb-8">
-        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
-          <Compass className="h-6 w-6 text-primary" />
-        </div>
+        <Image src="/brand/atlas-logo-monogram.webp" alt="" width={40} height={40} className="h-10 w-10 rounded-lg object-cover" />
         <span className="text-lg font-semibold tracking-tight text-foreground lg:block">
-          Atlas Tours
+          Atlas Travel
         </span>
       </Link>
 
