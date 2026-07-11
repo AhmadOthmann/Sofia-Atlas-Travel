@@ -111,6 +111,8 @@ Local demo events are stored in `.data/sofia-atlas-demo.json`. On Vercel, the de
 
 The compass and conversation emblem is the primary Atlas Travel identity. The repository includes three generated visuals under `public/brand`:
 
+Both logo files use alpha-transparent backgrounds so they work on light, dark, and tinted surfaces without a visible image box.
+
 - `atlas-logo-compass.webp` as the primary product logo
 - `atlas-logo-monogram.webp` as an alternate compact mark
 - `atlas-project-cover.webp` for portfolio cards and project documentation
