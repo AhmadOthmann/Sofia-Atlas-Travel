@@ -125,4 +125,4 @@ Both logo files use alpha-transparent backgrounds so they work on light, dark, a
 
 ## License
 
-No license has been selected. Add one before accepting external contributions or reuse.
+Licensed under the [MIT License](LICENSE).
